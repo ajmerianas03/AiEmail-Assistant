@@ -1,24 +1,109 @@
-# Compiled class file
+##############################
+#      SPRING BOOT / JAVA    #
+##############################
+
+# Maven / Gradle build output
+target/
+out/
+
+# Compiled class files
 *.class
 
-# Log file
+# Log files
 *.log
 
-# BlueJ files
-*.ctxt
+# OS crash logs
+hs_err_pid*
+replay_pid*
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Java packages
 *.jar
 *.war
-*.nar
 *.ear
+
+# Avoid ignoring Spring Boot resources
+!src/main/resources/
+!src/test/resources/
+
+# Temporary files
+*.tmp
+*.bak
+
+##############################
+#          REACT / NODE      #
+##############################
+
+# Node modules
+node_modules/
+
+# React build output
+build/
+dist/
+dist-ssr/
+
+# Local environment files
+*.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+##############################
+#         ARCHIVES           #
+##############################
+
+# Package archives (optional)
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+##############################
+#       OS / EDITORS         #
+##############################
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*.lnk
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+
+# IntelliJ / JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.c9/
+.settings/
+
+# Others
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+##############################
+#       ENV FILES            #
+##############################
+
+# Environment files
+.env
+.env.*.local
+.env.local
+.env.production.local
+.env.development.local
