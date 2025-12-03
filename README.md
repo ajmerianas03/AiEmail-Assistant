@@ -78,14 +78,18 @@ AiEmail-Assistant/
 │   └── src/
 │       ├── api/
 │       ├── components/
-│       ├── hooks/
-│       ├── layout/
-│       └── ui/
+│       │   ├── chat/
+│       │   ├── layout/
+│       │   ├── pages/
+│       │   └── ui/
+│       ├── context/
+│       └── hooks/
 │
 └── aiemail-assistant-ext/       # Chrome extension
     ├── manifest.json
     ├── content.js
     └── content.css
+
 ```
 
 ---
