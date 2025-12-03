@@ -1,157 +1,228 @@
-# AiEmail-Assistant
-
-A **Smart AI-powered Email Assistant** built using **Spring Boot** and **Google Gemini API**, with a **Chrome Extension** for real-time email suggestions, rewriting, and tone improvement directly inside Gmail.
+Here is a **clean, copy-paste-ready `README.md`** — no explanations, no extra commentary — just the complete file exactly as it should appear.
 
 ---
 
-## ✅ Phase 1 — Completed
+# 📬 AiEmail-Assistant
 
-### ✔ Backend (Spring Boot)
-- Fully configured REST API  
-- Google Gemini integration using WebClient  
-- Clean architecture (Controller, DTO, Service)  
-- CORS configured  
-- Externalized API keys with `application.yaml`
-
-### ✔ Frontend (React + MUI)
-- Modern chat-style UI  
-- Message bubbles for user & AI  
-- Persistent chat input  
-- Global Snackbar  
-- Custom MUI theme  
-- Clean folder structure  
-- `useEmailGenerator` hook with conversation support
+A smart AI-powered email assistant built using **Spring Boot**, **Google Gemini API**, **React**, and a **Chrome Extension** for real-time Gmail enhancements.
 
 ---
 
-## 🚀 Features
+## ✅ Features
 
-- **AI Email Suggestions** – Generate fast, professional replies  
-- **Tone Editing** – Casual, professional, friendly, etc.  
-- **Real-time Gmail Enhancer** via Chrome extension (coming soon)  
-- **Spring Boot Backend** with structured APIs  
-- **Gemini 2.5 Flash** for fast generation  
-- **React Frontend** with chat interface  
+### **Backend**
+
+* Spring Boot 3.x (WebFlux)
+* Google Gemini API integration
+* Clean layered architecture
+* Externalized configuration (`application.yaml`)
+* CORS enabled for frontend + extension
+
+### **Frontend (React + MUI)**
+
+* Modern chat UI
+* AI response bubbles
+* Global Snackbar
+* Custom theme
+* Persistent conversation context
+* Loader animations
+
+### **Chrome Extension (Phase 2)**
+
+* Injects AI actions directly into Gmail
+* “Rewrite”, “Improve Tone”, “Generate Reply” buttons
+* Sends email content to your backend
+* Automatically replaces text in Gmail composer
+* Content script + styling included
 
 ---
 
-## 🛠️ Tech Stack
+## 🧩 Tech Stack
 
-### Backend
-- Spring Boot 3.x  
-- Java 21  
-- Spring WebFlux  
-- Maven  
+### **Backend**
 
-### AI
-- Google Gemini API
+* Spring Boot 3.x
+* Java 21
+* WebFlux
+* Maven
+* Google Gemini API
 
-### Frontend
-- React 19  
-- Material UI (MUI v7)  
-- Axios  
+### **Frontend**
 
-### Extension
-- Chrome Extension (planned)
+* React 19
+* Material UI 7
+* Axios
+
+### **Extension**
+
+* Chrome Extension (Manifest V3)
+* Content Script
+* Gmail DOM integration
 
 ---
 
 ## 📁 Project Structure
 
----
-
-## 🔹 **Backend – Spring Boot (aiemail-assistant-sb)**
-
-aiemail-assistant-sb/
-│   pom.xml
-│   mvnw
-│   mvnw.cmd
-│   application.yaml
+```
+AiEmail-Assistant/
 │
-├── src/main/java/com/aiemail_assistant_sb
-│   ├── AiemailAssistantSbApplication.java
-│   ├── config
-│   │    ├── WebClientConfig.java
-│   │    └── WebConfig.java
-│   ├── controller
-│   │    └── EmailGeneratorController.java
-│   ├── dto
-│   │    └── EmailRequest.java
-│   └── service
-│        └── EmailGeneratorService.java
+├── aiemail-assistant-sb/        # Spring Boot backend
+│   ├── src/main/java/com/aiemail_assistant_sb/
+│   │   ├── config/
+│   │   ├── controller/
+│   │   ├── dto/
+│   │   └── service/
+│   └── src/main/resources/application.yaml
 │
-└── src/main/resources
-    ├── application.yaml
-    ├── static/
-    └── templates/
-
-
+├── aiemail-assistant-fe/        # React frontend
+│   └── src/
+│       ├── api/
+│       ├── components/
+│       ├── hooks/
+│       ├── layout/
+│       └── ui/
+│
+└── aiemail-assistant-ext/       # Chrome extension
+    ├── manifest.json
+    ├── content.js
+    └── content.css
+```
 
 ---
 
-## 🔹 **Frontend – React (aiemail-assistant-fe/src)**
-
-
-
-aiemail-assistant-fe/src/
-│   App.jsx
-│   App.css
-│   index.css
-│   main.jsx
-│   theme.js
-│
-├── api/
-│     emailService.js
-│
-├── assets/
-│     react.svg
-│
-├── components/
-│   ├── layout/
-│   │     AppLayout.jsx
-│   │     Header.jsx
-│   │
-│   ├── chat/
-│   │     ChatContainer.jsx
-│   │     ChatInput.jsx
-│   │     MessageBubble.jsx
-│   │
-│   ├── pages/
-│   │     EmailAssistantPage.jsx
-│   │
-│   └── ui/
-│         GlobalSnackbar.jsx
-│         LoaderIcon.jsx
-│
-├── context/
-│     SnackbarContext.jsx
-│
-└── hooks/
-      useEmailGenerator.js
-
-
+# 🛠️ Setup Instructions
 
 ---
 
-## 🚦 Next Steps (Phase 2)
-- Chrome extension integration  
-- Improved message animations  
-- Chat history persistence  
-- User authentication (optional)  
-- Export to Gmail  
+## 1️⃣ Backend Setup (Spring Boot)
+
+### **Prerequisites**
+
+* Java 21
+* Maven
+* Google Gemini API Key
+
+### **Configure API Key**
+
+Add this to `application.yaml`:
+
+```yaml
+gemini:
+  api-key: YOUR_GEMINI_API_KEY
+```
+
+### **Run the backend**
+
+```
+mvn spring-boot:run
+```
+
+Backend URL:
+**[http://localhost:8080](http://localhost:8080)**
 
 ---
 
-## 📄 License
-MIT (or add your own)
+## 2️⃣ Frontend Setup (React)
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run Dev Server:
+
+```
+npm run dev
+```
+
+Frontend URL:
+**[http://localhost:5173](http://localhost:5173)**
 
 ---
 
-If you want, I can also add:
+## 3️⃣ Chrome Extension Setup (Phase 2)
 
-✅ Setup Instructions  
-✅ API Endpoints section  
-✅ Screenshots section  
-✅ Chrome Extension docs  
+1. Open Chrome → go to:
+   `chrome://extensions/`
+2. Enable **Developer Mode**
+3. Click **Load Unpacked**
+4. Select:
 
-Just tell me **“add setup section”** or **“add screenshots”**.
+```
+AiEmail-Assistant/aiemail-assistant-ext/
+```
+
+Gmail → compose → AI buttons will appear automatically.
+
+---
+
+# 🌐 API Endpoints
+
+---
+
+## **POST /api/email/generate**
+
+### Request:
+
+```json
+{
+  "message": "Write a professional follow-up email.",
+  "tone": "professional"
+}
+```
+
+### Response:
+
+```json
+{
+  "reply": "Here is a polished professional follow-up email..."
+}
+```
+
+---
+
+# 🧠 Chrome Extension Documentation (Phase 2)
+
+---
+
+## 📦 Files
+
+```
+aiemail-assistant-ext/
+│ manifest.json
+│ content.js
+│ content.css
+```
+
+---
+
+## ⚙ How It Works
+
+1. Detects Gmail compose window
+2. Injects floating AI buttons
+3. Sends selected email text to backend
+4. Inserts generated text back into Gmail
+
+---
+
+# 📸 Screenshots 
+
+```
+## Email Assistant UI
+![UI](./screenshots/ui.png)
+
+## Chrome Extension in Gmail
+![Extension](./screenshots/extension.png)
+```
+
+---
+
+
+
+
+
+# 📄 License
+
+MIT License
+
