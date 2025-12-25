@@ -1,5 +1,4 @@
-Here is a **clean, copy-paste-ready `README.md`** — no explanations, no extra commentary — just the complete file exactly as it should appear.
-
+Her
 ---
 
 # 📬 AiEmail-Assistant
@@ -78,14 +77,18 @@ AiEmail-Assistant/
 │   └── src/
 │       ├── api/
 │       ├── components/
-│       ├── hooks/
-│       ├── layout/
-│       └── ui/
+│       │   ├── chat/
+│       │   ├── layout/
+│       │   ├── pages/
+│       │   └── ui/
+│       ├── context/
+│       └── hooks/
 │
 └── aiemail-assistant-ext/       # Chrome extension
     ├── manifest.json
     ├── content.js
     └── content.css
+
 ```
 
 ---
